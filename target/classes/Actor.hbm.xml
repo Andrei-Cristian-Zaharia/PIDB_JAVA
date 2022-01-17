@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="JavaBean.Actor" table="actori" optimistic-lock="version">
+        <id name="ACTOR_ID" type="java.lang.Long">
+            <column name="ACTOR_ID" sql-type="BIGINT" not-null="true"/>
+            <generator class="identity"/>
+        </id>
+        <property name="LASTNAME" type="java.lang.String">
+            <column name="LASTNAME" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="FIRSTNAME" type="java.lang.String">
+            <column name="FIRSTNAME" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="EMAIL_ADDRESS" type="java.lang.String">
+            <column name="EMAIL_ADDRESS" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="PHONE_NUMBER" type="java.lang.Integer">
+            <column name="PHONE_NUMBER" sql-type="INT" not-null="true"/>
+        </property>
+        <property name="BIRTHDATE" type="java.time.LocalDate">
+            <column name="BIRTHDATE" sql-type="DATE" not-null="true"/>
+        </property>
+        <property name="NATIONALITY" type="java.lang.String">
+            <column name="NATIONALITY" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        </property>
+        <property name="PREFERED_ROLE" type="java.lang.String">
+            <column name="PREFERED_ROLE" sql-type="VARCHAR" length="13" not-null="true" unique="true"/>
+        </property>
+        <property name="OCCUPIED" type="java.lang.Boolean">
+            <column name="OCCUPIED" sql-type="TINYINT"/>
+        </property>
+        <set name="CONTRACTS" table="contract" inverse="true" lazy="true" fetch="select">
+            <key column="ACTOR_ID"/>
+            <one-to-many class="JavaBean.Contract"/>
+        </set>
+    </class>
+</hibernate-mapping>

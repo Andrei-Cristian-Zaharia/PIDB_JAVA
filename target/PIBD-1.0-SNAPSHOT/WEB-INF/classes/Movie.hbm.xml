@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="JavaBean.Movie" table="filme" optimistic-lock="version">
+        <id name="MOVIE_ID" type="java.lang.Long">
+            <column name="MOVIE_ID" sql-type="BIGINT" not-null="true"/>
+            <generator class="identity"/>
+        </id>
+        <property name="MOVIE_NAME" type="java.lang.String">
+            <column name="MOVIE_NAME" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="MOVIE_TYPE" type="java.lang.String">
+            <column name="MOVIE_TYPE" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="PRODUCTION_COMPANY" type="java.lang.String">
+            <column name="PRODUCTION_COMPANY" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="RELEASE_DATE" type="java.time.LocalDate">
+            <column name="RELEASE_DATE" sql-type="DATE" not-null="true"/>
+        </property>
+        <property name="LANGUAGE" type="java.lang.String">
+            <column name="LANGUAGE" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="COUNTRY_ORIGIN" type="java.lang.String">
+            <column name="COUNTRY_ORIGIN" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <property name="RAITING" type="java.lang.Integer">
+            <column name="RAITING" not-null="true"/>
+        </property>
+        <property name="MOVIE_DIRECTOR" type="java.lang.String">
+            <column name="MOVIE_DIRECTOR" sql-type="VARCHAR" length="45" not-null="true"/>
+        </property>
+        <set name="CONTRACTS" table="contract" inverse="true" lazy="true" fetch="select">
+            <key column="MOVIE_ID"/>
+            <one-to-many class="JavaBean.Contract"/>
+        </set>
+    </class>
+</hibernate-mapping>

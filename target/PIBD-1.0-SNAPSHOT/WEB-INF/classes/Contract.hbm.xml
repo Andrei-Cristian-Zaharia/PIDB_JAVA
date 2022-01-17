@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="JavaBean.Contract" table="contract" optimistic-lock="version">
+        <id name="CONTRACT_ID" type="java.lang.Long">
+            <column name="CONTRACT_ID" sql-type="BIGINT" not-null="true"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one name="ACTOR" class="JavaBean.Actor" fetch="select">
+            <column name="ACTOR_ID" sql-type="BIGINT" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="MOVIE" class="JavaBean.Movie" fetch="select">
+            <column name="MOVIE_ID" sql-type="BIGINT" not-null="true"/>
+        </many-to-one>
+        <property name="DATE" type="java.time.LocalDate">
+            <column name="DATE" sql-type="DATE" not-null="true"/>
+        </property>
+        <property name="PAYCHECK" type="java.lang.Integer">
+            <column name="PAYCHECK" not-null="true"/>
+        </property>
+        <property name="DETAILS" type="java.lang.String">
+            <column name="DETAILS" sql-type="VARCHAR" length="100" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
