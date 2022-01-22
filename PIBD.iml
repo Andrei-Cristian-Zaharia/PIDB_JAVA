@@ -48,6 +48,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="material.amber-orange" level="application" />
+    <orderEntry type="library" name="material" level="application" />
+    <orderEntry type="library" name="material.teal-red" level="application" />
+    <orderEntry type="library" name="material.teal-blue" level="application" />
+    <orderEntry type="library" name="material.grey-light_blue" level="application" />
+    <orderEntry type="library" name="material.teal-light_blue" level="application" />
     <orderEntry type="library" name="Maven: jakarta.servlet:jakarta.servlet-api:5.0.0" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.26" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
@@ -76,12 +82,5 @@
     <orderEntry type="library" name="Maven: com.sun.activation:jakarta.activation:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:22.0.0" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.6.2.Final" level="project" />
-    <orderEntry type="library" name="material.amber-orange" level="application" />
-    <orderEntry type="library" name="material" level="application" />
-    <orderEntry type="library" name="material.teal-red" level="application" />
-    <orderEntry type="library" name="material.teal-blue" level="application" />
-    <orderEntry type="library" name="material.grey-light_blue" level="application" />
-    <orderEntry type="library" name="material.teal-light_blue" level="application" />
   </component>
 </module>

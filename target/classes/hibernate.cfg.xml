@@ -9,8 +9,8 @@
         <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pibd_project</property>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">andrei1423</property>
+        <property name="hibernate.connection.username">project</property>
+        <property name="hibernate.connection.password">parolaproiect123</property>
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
         <mapping resource="Actor.hbm.xml"/>
         <mapping resource="Movie.hbm.xml"/>

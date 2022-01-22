@@ -37,7 +37,6 @@ public class ActorRepository implements IActorRepository {
 
     @Override
     public void deleteActor(Actor actor) {
-
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.delete(actor);
